@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Student Grade Calculator | JavaScript App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="calc-card">
+        <header class="card-header">
+            <h2>Academic Grade Evaluation Portal</h2>
+            <p>Enter marks obtained in 5 core subjects (0 to 100) to calculate total, average, final grade, and result status.</p>
+        </header>
+
+        <form id="gradeForm" class="calc-form" onsubmit="return false;">
+            
+            <div class="subject-inputs">
+                <div class="input-row">
+                    <label for="sub1">Subject 1: Web Technology</label>
+                    <input type="number" id="sub1" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+                <div class="input-row">
+                    <label for="sub2">Subject 2: Data Structures</label>
+                    <input type="number" id="sub2" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+                <div class="input-row">
+                    <label for="sub3">Subject 3: Operating Systems</label>
+                    <input type="number" id="sub3" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+                <div class="input-row">
+                    <label for="sub4">Subject 4: Computer Networks</label>
+                    <input type="number" id="sub4" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+                <div class="input-row">
+                    <label for="sub5">Subject 5: Database Management</label>
+                    <input type="number" id="sub5" min="0" max="100" placeholder="0 - 100" required>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn btn-reset" onclick="resetCalculator()">Clear All</button>
+                <button type="button" class="btn btn-calc" onclick="calculateGrade()">Evaluate Grade</button>
+            </div>
+
+        </form>
+
+        <!-- Result Summary Display -->
+        <div id="resultDisplay" class="result-container hidden">
+            <h3>Academic Performance Report</h3>
+            
+            <div class="metrics-grid">
+                <div class="metric-box">
+                    <span class="label">Total Marks</span>
+                    <span class="val" id="totalMarks">0 / 500</span>
+                </div>
+                <div class="metric-box">
+                    <span class="label">Average Percentage</span>
+                    <span class="val" id="avgPercentage">0.00%</span>
+                </div>
+                <div class="metric-box">
+                    <span class="label">Letter Grade</span>
+                    <span class="val grade-val" id="letterGrade">-</span>
+                </div>
+                <div class="metric-box">
+                    <span class="label">Final Result</span>
+                    <span class="val status-val" id="passStatus">-</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+:root {
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --bg-main: #0f172a;
+    --card-bg: #1e293b;
+    --text-primary: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    --pass-color: #22c55e;
+    --fail-color: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+.calc-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    width: 100%;
+    max-width: 600px;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+}
+
+.card-header h2 {
+    font-size: 1.75rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.card-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.subject-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.input-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-row label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+}
+
+.input-row input {
+    width: 120px;
+    padding: 0.6rem 0.8rem;
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+}
+
+.btn-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+.btn-reset {
+    background: #334155;
+    color: #fff;
+}
+
+.btn-reset:hover {
+    background: #475569;
+}
+
+.btn-calc {
+    background: var(--primary);
+    color: #fff;
+}
+
+.btn-calc:hover {
+    background: var(--primary-hover);
+}
+
+/* Results Display */
+.result-container {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
+}
+
+.result-container.hidden {
+    display: none;
+}
+
+.result-container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.metric-box {
+    background: #0f172a;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.metric-box .label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+}
+
+.metric-box .val {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.grade-val {
+    color: #38bdf8;
+}
+
+.status-pass {
+    color: var(--pass-color);
+}
+
+.status-fail {
+    color: var(--fail-color);
+}
